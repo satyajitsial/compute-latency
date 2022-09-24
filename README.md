@@ -94,7 +94,7 @@ PLUGIN_SUFFIX is the suffix string to be added after each plugin name in the hea
 
 | FORM PARAMETER	     														| DESCRIPTION										  													|
 | ----------- 																		| -----------																								|
-| name<br>Type:string  														|  The name of the plugin to use, in this case re-prioritize |
+| name<br>Type:string  														|  The name of the plugin to use, in this case compute-latency |
 | service.id<br>Type:string  										  |  The ID of the Service the plugin targets.								|
 | route.id<br>Type:string   											|  The ID of the Route  the plugin targets.									|
 | enabled<br>Type:boolean<br>Default value:true   |  Whether this plugin will be applied.										  |
