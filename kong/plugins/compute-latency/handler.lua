@@ -87,8 +87,6 @@ local function kongaccess(conf)
   local plugins_iterator = runloop.get_plugins_iterator()
   local old_ws = ctx.workspace
   ctx.delay_response = true
-  local elapsedTime = "Compute_Latency_Plugin_Elapsed_time:"
-  local pluginElapsedTime = ""
   for plugin, plugin_conf in plugins_iterator:iterate("access", ctx) do
        if(plugin.name ~= currentpluginName) then
          local accessPhaseStartTime = get_now_ns()
@@ -98,10 +96,8 @@ local function kongaccess(conf)
 		 local pluginName = plugin.name
 		 local pluginAccessTimemillis = pluginAccessTime / 1000000
          ngx.req.set_header(pluginName .. conf.plugin_suffix, pluginAccessTimemillis)
-		 pluginElapsedTime = pluginElapsedTime .. " ###### " .. pluginName .. conf.plugin_suffix .. " : " .. pluginAccessTimemillis
 	   end
   end
-  print(elapsedTime .. pluginElapsedTime .. " ######")
   if ctx.delayed_response then
     ctx.KONG_ACCESS_ENDED_AT = get_updated_now_ms()
     ctx.KONG_ACCESS_TIME = ctx.KONG_ACCESS_ENDED_AT - ctx.KONG_ACCESS_START
