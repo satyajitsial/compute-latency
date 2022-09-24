@@ -17,7 +17,7 @@ $ luarocks make kong-plugin-compute-latency-0.1.0-1.rockspec
 ### Other
 
 ```
-$ git clone https://github.com/satyajitsial/re-prioritize.git
+$ git clone https://github.com/satyajitsial/compute-latency.git
 $ cd compute-latency
 $ luarocks install kong-plugin-compute-latency-0.1.0-1.all.rock
 ```
